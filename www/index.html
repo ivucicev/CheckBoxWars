@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+
+    <script src="lib/firebase/firebase-debug.js"></script>
+    <script src="lib/angularfire/dist/angularfire.js"></script>
+
+</head>
+
+<body ng-app="starter">
+    <ion-pane>
+        <ion-header-bar hide-nav-bar="true"></ion-header-bar>
+        <ion-content ng-controller="GameController">
+            <div class="row">
+                <div class="col">
+                    <div ng-click="checkAndDisable(1, 1)">
+                        <div ng-switch="game.status11">
+                            <i ng-switch-default class="icon ion-plus-circled calm"></i>
+                            <i ng-switch-when="iHitEnemy" class="icon ion-checkmark-circled positive"></i>
+                            <i ng-switch-when="iMissEnemy" class="icon ion-minus-circled balanced"></i>
+                            <i ng-switch-when="EnemyHitMe" class="icon ion-close-circled assertive"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div ng-click="checkAndDisable(1, 2)">
+                        <div ng-switch="game.status12">
+                            <i ng-switch-default class="icon ion-plus-circled calm"></i>
+                            <i ng-switch-when="iHitEnemy" class="icon ion-checkmark-circled positive"></i>
+                            <i ng-switch-when="iMissEnemy" class="icon ion-minus-circled balanced"></i>
+                            <i ng-switch-when="EnemyHitMe" class="icon ion-close-circled assertive"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div ng-click="checkAndDisable(1, 3)">
+                        <div ng-switch="game.status13">
+                            <i ng-switch-default class="icon ion-plus-circled calm"></i>
+                            <i ng-switch-when="iHitEnemy" class="icon ion-checkmark-circled positive"></i>
+                            <i ng-switch-when="iMissEnemy" class="icon ion-minus-circled balanced"></i>
+                            <i ng-switch-when="EnemyHitMe" class="icon ion-close-circled assertive"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div ng-click="checkAndDisable(1, 4)">
+                        <div ng-switch="game.status14">
+                            <i ng-switch-default class="icon ion-plus-circled calm"></i>
+                            <i ng-switch-when="iHitEnemy" class="icon ion-checkmark-circled positive"></i>
+                            <i ng-switch-when="iMissEnemy" class="icon ion-minus-circled balanced"></i>
+                            <i ng-switch-when="EnemyHitMe" class="icon ion-close-circled assertive"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div ng-click="checkAndDisable(1, 5)">
+                        <div ng-switch="game.status15">
+                            <i ng-switch-default class="icon ion-plus-circled calm"></i>
+                            <i ng-switch-when="iHitEnemy" class="icon ion-checkmark-circled positive"></i>
+                            <i ng-switch-when="iMissEnemy" class="icon ion-minus-circled balanced"></i>
+                            <i ng-switch-when="EnemyHitMe" class="icon ion-close-circled assertive"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div ng-click="checkAndDisable(1, 2)">
+                        <div ng-switch="game.status12">
+                            <i ng-switch-default class="icon ion-plus-circled calm"></i>
+                            <i ng-switch-when="iHitEnemy" class="icon ion-checkmark-circled positive"></i>
+                            <i ng-switch-when="iMissEnemy" class="icon ion-minus-circled balanced"></i>
+                            <i ng-switch-when="EnemyHitMe" class="icon ion-close-circled assertive"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div ng-click="checkAndDisable(2, 2)">
+                        <div ng-switch="game.status22">
+                            <i ng-switch-default class="icon ion-plus-circled calm"></i>
+                            <i ng-switch-when="iHitEnemy" class="icon ion-checkmark-circled positive"></i>
+                            <i ng-switch-when="iMissEnemy" class="icon ion-minus-circled balanced"></i>
+                            <i ng-switch-when="EnemyHitMe" class="icon ion-close-circled assertive"></i>
+                        </div></div>
+                </div>
+                <div class="col">
+                    <div ng-click="checkAndDisable(2, 3)">
+                        <div ng-switch="game.status23">
+                            <i ng-switch-default class="icon ion-plus-circled calm"></i>
+                            <i ng-switch-when="iHitEnemy" class="icon ion-checkmark-circled positive"></i>
+                            <i ng-switch-when="iMissEnemy" class="icon ion-minus-circled balanced"></i>
+                            <i ng-switch-when="EnemyHitMe" class="icon ion-close-circled assertive"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div ng-click="checkAndDisable(2, 4)">
+                        <div ng-switch="game.status24">
+                            <i ng-switch-default class="icon ion-plus-circled calm"></i>
+                            <i ng-switch-when="iHitEnemy" class="icon ion-checkmark-circled positive"></i>
+                            <i ng-switch-when="iMissEnemy" class="icon ion-minus-circled balanced"></i>
+                            <i ng-switch-when="EnemyHitMe" class="icon ion-close-circled assertive"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div ng-click="checkAndDisable(2, 5)">
+                        <div ng-switch="game.status25">
+                            <i ng-switch-default class="icon ion-plus-circled calm"></i>
+                            <i ng-switch-when="iHitEnemy" class="icon ion-checkmark-circled positive"></i>
+                            <i ng-switch-when="iMissEnemy" class="icon ion-minus-circled balanced"></i>
+                            <i ng-switch-when="EnemyHitMe" class="icon ion-close-circled assertive"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div ng-click="checkAndDisable(3, 1)">
+                        <div ng-switch="game.status31">
+                            <i ng-switch-default class="icon ion-plus-circled calm"></i>
+                            <i ng-switch-when="iHitEnemy" class="icon ion-checkmark-circled positive"></i>
+                            <i ng-switch-when="iMissEnemy" class="icon ion-minus-circled balanced"></i>
+                            <i ng-switch-when="EnemyHitMe" class="icon ion-close-circled assertive"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div ng-click="checkAndDisable(3, 2)">
+                        <div ng-switch="game.status32">
+                            <i ng-switch-default class="icon ion-plus-circled calm"></i>
+                            <i ng-switch-when="iHitEnemy" class="icon ion-checkmark-circled positive"></i>
+                            <i ng-switch-when="iMissEnemy" class="icon ion-minus-circled balanced"></i>
+                            <i ng-switch-when="EnemyHitMe" class="icon ion-close-circled assertive"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div ng-click="checkAndDisable(3, 3)">
+                        <div ng-switch="game.status33">
+                            <i ng-switch-default class="icon ion-plus-circled calm"></i>
+                            <i ng-switch-when="iHitEnemy" class="icon ion-checkmark-circled positive"></i>
+                            <i ng-switch-when="iMissEnemy" class="icon ion-minus-circled balanced"></i>
+                            <i ng-switch-when="EnemyHitMe" class="icon ion-close-circled assertive"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div ng-click="checkAndDisable(3, 4)">
+                        <div ng-switch="game.status34">
+                            <i ng-switch-default class="icon ion-plus-circled calm"></i>
+                            <i ng-switch-when="iHitEnemy" class="icon ion-checkmark-circled positive"></i>
+                            <i ng-switch-when="iMissEnemy" class="icon ion-minus-circled balanced"></i>
+                            <i ng-switch-when="EnemyHitMe" class="icon ion-close-circled assertive"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div ng-click="checkAndDisable(3, 5)">
+                        <div ng-switch="game.status35">
+                            <i ng-switch-default class="icon ion-plus-circled calm"></i>
+                            <i ng-switch-when="iHitEnemy" class="icon ion-checkmark-circled positive"></i>
+                            <i ng-switch-when="iMissEnemy" class="icon ion-minus-circled balanced"></i>
+                            <i ng-switch-when="EnemyHitMe" class="icon ion-close-circled assertive"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div ng-click="checkAndDisable(4, 1)">
+                        <div ng-switch="game.status41">
+                            <i ng-switch-default class="icon ion-plus-circled calm"></i>
+                            <i ng-switch-when="iHitEnemy" class="icon ion-checkmark-circled positive"></i>
+                            <i ng-switch-when="iMissEnemy" class="icon ion-minus-circled balanced"></i>
+                            <i ng-switch-when="EnemyHitMe" class="icon ion-close-circled assertive"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div ng-click="checkAndDisable(4, 2)">
+                        <div ng-switch="game.status42">
+                            <i ng-switch-default class="icon ion-plus-circled calm"></i>
+                            <i ng-switch-when="iHitEnemy" class="icon ion-checkmark-circled positive"></i>
+                            <i ng-switch-when="iMissEnemy" class="icon ion-minus-circled balanced"></i>
+                            <i ng-switch-when="EnemyHitMe" class="icon ion-close-circled assertive"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div ng-click="checkAndDisable(4, 3)">
+                        <div ng-switch="game.status43">
+                            <i ng-switch-default class="icon ion-plus-circled calm"></i>
+                            <i ng-switch-when="iHitEnemy" class="icon ion-checkmark-circled positive"></i>
+                            <i ng-switch-when="iMissEnemy" class="icon ion-minus-circled balanced"></i>
+                            <i ng-switch-when="EnemyHitMe" class="icon ion-close-circled assertive"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div ng-click="checkAndDisable(4, 4)">
+                        <div ng-switch="game.status44">
+                            <i ng-switch-default class="icon ion-plus-circled calm"></i>
+                            <i ng-switch-when="iHitEnemy" class="icon ion-checkmark-circled positive"></i>
+                            <i ng-switch-when="iMissEnemy" class="icon ion-minus-circled balanced"></i>
+                            <i ng-switch-when="EnemyHitMe" class="icon ion-close-circled assertive"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div ng-click="checkAndDisable(4, 5)">
+                        <div ng-switch="game.status45">
+                            <i ng-switch-default class="icon ion-plus-circled calm"></i>
+                            <i ng-switch-when="iHitEnemy" class="icon ion-checkmark-circled positive"></i>
+                            <i ng-switch-when="iMissEnemy" class="icon ion-minus-circled balanced"></i>
+                            <i ng-switch-when="EnemyHitMe" class="icon ion-close-circled assertive"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div ng-click="checkAndDisable(5, 1)">
+                        <div ng-switch="game.status51">
+                            <i ng-switch-default class="icon ion-plus-circled calm"></i>
+                            <i ng-switch-when="iHitEnemy" class="icon ion-checkmark-circled positive"></i>
+                            <i ng-switch-when="iMissEnemy" class="icon ion-minus-circled balanced"></i>
+                            <i ng-switch-when="EnemyHitMe" class="icon ion-close-circled assertive"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div ng-click="checkAndDisable(5, 2)">
+                        <div ng-switch="game.status52">
+                            <i ng-switch-default class="icon ion-plus-circled calm"></i>
+                            <i ng-switch-when="iHitEnemy" class="icon ion-checkmark-circled positive"></i>
+                            <i ng-switch-when="iMissEnemy" class="icon ion-minus-circled balanced"></i>
+                            <i ng-switch-when="EnemyHitMe" class="icon ion-close-circled assertive"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div ng-click="checkAndDisable(5, 3)">
+                        <div ng-switch="game.status53">
+                            <i ng-switch-default class="icon ion-plus-circled calm"></i>
+                            <i ng-switch-when="iHitEnemy" class="icon ion-checkmark-circled positive"></i>
+                            <i ng-switch-when="iMissEnemy" class="icon ion-minus-circled balanced"></i>
+                            <i ng-switch-when="EnemyHitMe" class="icon ion-close-circled assertive"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div ng-click="checkAndDisable(5, 4)">
+                        <div ng-switch="game.status54">
+                            <i ng-switch-default class="icon ion-plus-circled calm"></i>
+                            <i ng-switch-when="iHitEnemy" class="icon ion-checkmark-circled positive"></i>
+                            <i ng-switch-when="iMissEnemy" class="icon ion-minus-circled balanced"></i>
+                            <i ng-switch-when="EnemyHitMe" class="icon ion-close-circled assertive"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div ng-click="checkAndDisable(5, 5)">
+                        <div ng-switch="game.status55">
+                            <i ng-switch-default class="icon ion-plus-circled calm"></i>
+                            <i ng-switch-when="iHitEnemy" class="icon ion-checkmark-circled positive"></i>
+                            <i ng-switch-when="iMissEnemy" class="icon ion-minus-circled balanced"></i>
+                            <i ng-switch-when="EnemyHitMe" class="icon ion-close-circled assertive"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ion-content>
+    </ion-pane>
+</body>
+
+</html>
